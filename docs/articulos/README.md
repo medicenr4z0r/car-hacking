@@ -32,9 +32,17 @@ Cada artículo puede incluir:
 - Preguntas de repaso.
 - Fuentes para continuar investigando.
 
-## Punto de partida
+## Ruta inicial de aprendizaje
 
-Si estás comenzando, podés leer:
+La primera etapa va a estar organizada en cinco pasos. La idea es avanzar de a poco, sin saltar directamente a herramientas o técnicas complejas.
+
+- **00. Bienvenida:** qué es este sitio y cómo aprovecharlo.
+- **01. Entender cómo funciona un auto:** arquitectura, ECUs y sistemas electrónicos.
+- **02. Superficie de ataque:** las puertas y ventanas de un vehículo moderno.
+- **03. Cómo se comunican sus módulos:** CAN, OBD-II y conceptos básicos de diagnóstico.
+- **04. Primer laboratorio seguro:** simulación y práctica sin usar un auto real.
+
+Si estás comenzando, podés arrancar por:
 
 [Arquitectura de vehículos y ECUs](arquitectura-de-vehiculos-y-ecus.md)
 
