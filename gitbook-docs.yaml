@@ -1,13 +1,30 @@
 $schema: https://api.gitbook.com/gitbook-docs.yaml
-
 site:
   title: Car Hacking
   structure:
-    - type: space
-      key: space-articulos
-      title: Artículos
-      path: articulos
+    - type: section
+      key: section-1
+      title: Car Hacking
+      path: car-hacking
       default: true
-      content:
-        directory: ./docs/articulos
-        language: es
+      children:
+        - type: space
+          key: space-articulos
+          title: Artículos
+          path: articulos
+          default: true
+          content:
+            directory: ./docs/articulos
+            language: es
+    - type: section
+      key: section-2
+      title: Bienvenido
+      path: bienvenido
+      children:
+        - type: space
+          key: space-1
+          title: Bienvenido
+          path: bienvenido
+          default: true
+          content:
+            directory: ./bienvenido
