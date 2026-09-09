@@ -1,6 +1,6 @@
-# Ruta de aprendizaje
+# Table of contents
 
-* [00. Bienvenida](README.md)
+* [Car Hacking en Español](README.md)
 
 ## 01. Entender cómo funciona un auto
 
