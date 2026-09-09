@@ -6,7 +6,7 @@ site:
       key: section-1
       title: Car Hacking
       path: car-hacking
-      description: Test description
+      description: ""
       default: true
       children:
         - type: space
