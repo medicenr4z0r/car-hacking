@@ -1,11 +1,13 @@
 ---
-title: "Arquitectura de vehículos y ECUs"
-description: "Introducción a la arquitectura electrónica de los vehículos modernos y a sus unidades de control."
+title: Arquitectura de vehículos y ECUs
+description: >-
+  Introducción a la arquitectura electrónica de los vehículos y a sus unidades
+  de control.
 ---
 
 # Arquitectura de vehículos y ECUs
 
-Un vehículo moderno no es únicamente un sistema mecánico. Es una plataforma distribuida formada por sensores, actuadores, redes de comunicación y unidades de control electrónico.
+Un vehículo  no es únicamente un sistema mecánico. Es una plataforma distribuida formada por sensores, actuadores, redes de comunicación y unidades de control electrónico.
 
 {% hint style="warning" %}
 El estudio de sistemas automotrices debe realizarse únicamente sobre vehículos, componentes y laboratorios propios o expresamente autorizados.
@@ -17,31 +19,43 @@ Los vehículos actuales integran numerosos sistemas electrónicos que trabajan d
 
 Entre las funciones gestionadas electrónicamente se encuentran:
 
-- Control del motor y de la transmisión.
-- Frenado y estabilidad.
-- Airbags y sistemas de seguridad pasiva.
-- Iluminación y carrocería.
-- Climatización.
-- Instrumentación del cuadro.
-- Infoentretenimiento y conectividad.
-- Asistencia a la conducción.
+* Control del motor y de la transmisión.
+* Frenado y estabilidad.
+* Airbags y sistemas de seguridad pasiva.
+* Iluminación y carrocería.
+* Climatización.
+* Instrumentación del cuadro.
+* Infoentretenimiento y conectividad.
+* Asistencia a la conducción.
 
 Esta arquitectura se parece, a nivel conceptual, a una red distribuida: existen múltiples nodos independientes que intercambian mensajes y colaboran para ofrecer una función común.
 
+En la siguiente imagen vemos una imagen conceptual del vehículo como sistema distribuido:
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Obviamente, esta imagen tiene sus errores, pero a día de la fecha no se encontró algo mejor.&#x20;
+
+Lo importante aquí es que vayas viendo cómo interactuan las diferentes funciones o servicios que hay dentro de un auto. Lo más loco, es que actualmente si te pones a observar cómo eran los autos en los 2000 y cómo son ahora en la actualidad te van a explotar la cabeza, porque la tecnología que hay hoy en día no se compara con lo de años anteriores, sobre todo por el avance de las IAs.
+
 ## ¿Qué es una ECU?
 
-Una **ECU**, del inglés *Electronic Control Unit*, es una unidad de control electrónico. Puede recibir información de sensores, procesarla mediante software y controlar actuadores u otros componentes.
+Una **ECU**, del inglés _Electronic Control Unit_, es una unidad de control electrónico. Puede recibir información de sensores, procesarla mediante software y controlar actuadores u otros componentes.
 
 Una ECU suele incluir:
 
-- Un microcontrolador o procesador.
-- Memoria para el firmware y los datos.
-- Entradas para sensores.
-- Salidas para actuadores.
-- Interfaces de comunicación.
-- Requisitos específicos de alimentación y seguridad.
+* Un microcontrolador o procesador.
+* Memoria para el firmware y los datos.
+* Entradas para sensores.
+* Salidas para actuadores.
+* Interfaces de comunicación.
+* Requisitos específicos de alimentación y seguridad.
 
 No todas las ECUs tienen la misma complejidad. Algunas realizan tareas sencillas y otras ejecutan funciones críticas que requieren respuestas deterministas, tolerancia a fallos y mecanismos de diagnóstico.
+
+Algunas imágenes de ECU:
+
+<div align="left"><figure><img src=".gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure> <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure></div>
 
 ## Software embebido
 
@@ -53,17 +67,17 @@ Desde la perspectiva de seguridad, una ECU debe estudiarse como una combinación
 
 ## Comunicación entre módulos
 
-Las ECUs necesitan compartir información. Para ello utilizan redes internas del vehículo y protocolos específicos. Una red muy extendida es **CAN**, abreviatura de *Controller Area Network*.
+Las ECUs necesitan compartir información. Para ello utilizan redes internas del vehículo y protocolos específicos. Una red muy extendida es **CAN**, abreviatura de _Controller Area Network_.
 
 CAN permite que distintos módulos intercambien mensajes sobre un bus común. En lugar de establecer una conexión independiente entre cada par de ECUs, varios módulos pueden transmitir y recibir información dentro de la misma red.
 
 La comunicación interna puede transportar datos relacionados con:
 
-- Estado de sensores.
-- Información del motor.
-- Estado de puertas y luces.
-- Diagnóstico.
-- Alertas y eventos del vehículo.
+* Estado de sensores.
+* Información del motor.
+* Estado de puertas y luces.
+* Diagnóstico.
+* Alertas y eventos del vehículo.
 
 La organización exacta de los mensajes, los permisos y la separación entre redes dependen del fabricante y del modelo. Por eso no debe asumirse que todos los vehículos tienen la misma arquitectura.
 
@@ -73,11 +87,11 @@ Los vehículos pueden dividir sus redes en distintos dominios o segmentos. Esta 
 
 Algunas arquitecturas distinguen, por ejemplo, entre:
 
-- Sistemas de propulsión.
-- Sistemas de carrocería.
-- Sistemas de seguridad.
-- Infoentretenimiento.
-- Conectividad externa.
+* Sistemas de propulsión.
+* Sistemas de carrocería.
+* Sistemas de seguridad.
+* Infoentretenimiento.
+* Conectividad externa.
 
 La existencia de segmentación no garantiza por sí sola la seguridad. También deben analizarse los gateways, las reglas de encaminamiento, la autenticación y las interfaces físicas o inalámbricas que conectan cada segmento.
 
@@ -85,13 +99,13 @@ La existencia de segmentación no garantiza por sí sola la seguridad. También 
 
 La experiencia previa en pentesting resulta útil para estudiar vehículos porque permite aplicar conocimientos de:
 
-- Análisis de redes.
-- Ingeniería inversa.
-- Sistemas embebidos.
-- Revisión de APIs.
-- Seguridad móvil.
-- Modelado de amenazas.
-- Análisis de firmware.
+* Análisis de redes.
+* Ingeniería inversa.
+* Sistemas embebidos.
+* Revisión de APIs.
+* Seguridad móvil.
+* Modelado de amenazas.
+* Análisis de firmware.
 
 Sin embargo, el contexto automotriz añade restricciones importantes. Un error de configuración o una prueba mal diseñada puede afectar componentes físicos, sistemas críticos o la seguridad de las personas.
 
@@ -99,12 +113,12 @@ Por este motivo, el aprendizaje debe comenzar con documentación, simuladores y 
 
 ## Ideas principales
 
-- Un vehículo moderno es un sistema distribuido de hardware y software.
-- Las ECUs controlan funciones específicas y se comunican con otros módulos.
-- El software puede ejecutarse sobre RTOS, Linux embebido u otras plataformas.
-- CAN es una de las redes internas más importantes, pero no es la única.
-- La arquitectura varía según el fabricante y el modelo.
-- La seguridad debe analizarse considerando hardware, firmware, redes e interfaces.
+* Un vehículo moderno es un sistema distribuido de hardware y software.
+* Las ECUs controlan funciones específicas y se comunican con otros módulos.
+* El software puede ejecutarse sobre RTOS, Linux embebido u otras plataformas.
+* CAN es una de las redes internas más importantes, pero no es la única.
+* La arquitectura varía según el fabricante y el modelo.
+* La seguridad debe analizarse considerando hardware, firmware, redes e interfaces.
 
 ## Preguntas de repaso
 
