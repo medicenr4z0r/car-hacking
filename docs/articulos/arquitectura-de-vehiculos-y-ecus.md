@@ -36,7 +36,38 @@ En la siguiente imagen vemos una imagen conceptual del vehículo como sistema di
 
 Obviamente, esta imagen tiene sus errores, pero a día de la fecha no se encontró algo mejor.&#x20;
 
-Lo importante aquí es que vayas viendo cómo interactuan las diferentes funciones o servicios que hay dentro de un auto. Lo más loco, es que actualmente si te pones a observar cómo eran los autos en los 2000 y cómo son ahora en la actualidad te van a explotar la cabeza, porque la tecnología que hay hoy en día no se compara con lo de años anteriores, sobre todo por el avance de las IAs.
+Lo importante aquí es que vayas viendo cómo interactuan las diferentes funciones o servicios que hay dentro de un auto.&#x20;
+
+### Evolución de la Arquitectura de un Auto: Del Sistema Distribuido **E/E** (arquitectura eléctrica y electrónica) al Vehículo Definido por Software (SDV)
+
+Previamente vimos cómo era un auto tradicional. Para entender cómo se concibe el automóvil moderno como un sistema distribuido, es necesario repasar su evolución arquitectónica electrónica y de software. En la siguiente imagen podemos ver un poco cómo fue la evolución:
+
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+#### La Era Tradicional (Arquitectura Distribuida y Basada en Dominio)
+
+Historicamente, los vehículos dependían de una aproximación puramente centrada en el hardware. Cada nueva función (frenos ABS, control de clima, ventanas eléctricas) requería su propia ECU (Unidad de Control Electrónico) independiente con software acoplado y cerrado.
+
+Esto resultó en una red hiper-distribuida con decenas (e incluso cientos) de ECUs aisladas conectadas por mallas complejas de cableado (_harnesses_), lo que generaba cuellos de botella, alto peso físico e imposibilidad de actualizar el vehículo sin intervención en taller.
+
+#### El Salto al Vehículo Definido por Software (SDV)
+
+El concepto de Software-Defined Vehicle (SDV) invierte este paradigma: el software pasa a ser el núcleo que define las capacidades del vehículo, desacoplándose del hardware subyacente.
+
+Esta transición se logra consolidando la red del auto mediante dos pilares estructurales:
+
+* Computación Centralizada (HPCs): Se reemplazan docenas de ECUs dedicadas por una o dos computadoras de alto rendimiento (_High-Performance Computers_) que procesan la lógica central (IA, conducción autónoma, infoentretenimiento).
+* Arquitectura Zonal (_Zonal Architecture_): Se organizan concentradores locales o _gateways_ por ubicación física en el vehículo (zona frontal, trasera, puertas), reduciendo drásticamente la longitud y complejidad del cableado.
+
+#### Caracterizaciones Clave del SDV como Sistema Distribuido Moderno
+
+1. Desacoplamiento de Hardware y Software: Permite desarrollar y actualizar aplicaciones de forma modular sin rediseñar los componentes mecánicos o electrónicos.
+2. Actualizaciones Over-The-Air (OTA): Capacidades para corregir fallos, integrar nuevas funciones o desplegar parches de seguridad de manera remota e inalámbrica.
+3. Conectividad Continua e Integración Cloud: Conexión de alta velocidad (5G, Wi-Fi) para recopilar telemetría en tiempo real y ejecutar servicios digitales avanzados.
+
+{% hint style="info" %}
+Para entrar más en detalle sobre este tema, te dejamos algunos artículos que fueron referencias para este capítulo.
+{% endhint %}
 
 ## ¿Qué es una ECU?
 
@@ -131,4 +162,6 @@ Por este motivo, el aprendizaje debe comenzar con documentación, simuladores y 
 
 ## Fuentes
 
-> Esta sección se completará con las fuentes originales utilizadas en NotebookLM.
+> [https://www.keysight.com/blogs/en/inds/auto/2025/08/what-is-an-sdv](https://www.keysight.com/blogs/en/inds/auto/2025/08/what-is-an-sdv)
+>
+> [https://www.keysight.com/blogs/en/inds/auto/2025/09/levels-of-sdvs](https://www.keysight.com/blogs/en/inds/auto/2025/09/levels-of-sdvs)
